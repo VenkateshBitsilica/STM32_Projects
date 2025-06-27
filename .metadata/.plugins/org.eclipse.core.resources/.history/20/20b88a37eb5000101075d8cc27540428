@@ -1,0 +1,21 @@
+#include "stm32l4xx_hal.h"
+#include "adc.h"
+
+uint32_t adc_val;
+int main()
+{
+	HAL_Init();
+	adc_start();
+	while(1)
+	{
+		adc_val = adc_read();
+		printf("ADC value : %d",adc_val);
+		HAL_Delay(100);
+	}
+}
+
+
+void SysTick_Handler(void)
+{
+	HAL_IncTick();
+}

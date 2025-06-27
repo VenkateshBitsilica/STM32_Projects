@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="RTC_AM_PM_Definitions"/>
+		<item value="RTC_Month_Date_Definitions"/>
+		<item value="RTCEx_Output_selection_Definitions"/>
+		<item value="RTC_Hour_Formats"/>
+		<item value="I2C_GENERAL_CALL_ADDRESSING_MODE"/>
+		<item value="I2C_ADDRESSING_MODE"/>
+		<item value="GPIOEx_Alternate_function_selection"/>
+		<item value="DMA_Peripheral_data_size"/>
+		<item value="DMA_Peripheral_incremented_mode"/>
+		<item value="DMA_Data_transfer_direction"/>
+		<item value="DMA_request"/>
+		<item value="SPI_MSB_LSB_transmission"/>
+		<item value="SPI_Direction"/>
+		<item value="SPI_Mode"/>
+		<item value="DMA_mode"/>
+	</list>
+</section>
