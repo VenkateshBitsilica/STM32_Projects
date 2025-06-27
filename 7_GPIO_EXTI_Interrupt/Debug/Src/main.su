@@ -1,0 +1,7 @@
+C:/Users/Venkatesh J/Desktop/BS/Microcontrollers/STM32L476RG/Workspace/7_GPIO_EXTI_Interrupt/Drivers/CMSIS/Include/core_cm4.h:2059:26:ITM_SendChar	16	static,ignoring_inline_asm
+../Src/main.c:5:5:_write	32	static
+../Src/main.c:21:5:main	8	static
+../Src/main.c:32:6:SysTick_Handler	8	static
+../Src/main.c:37:6:gpio_EXTI_init	40	static
+../Src/main.c:66:6:HAL_GPIO_EXTI_Callback	16	static
+../Src/main.c:71:6:EXTI15_10_IRQHandler	8	static

@@ -1,0 +1,17 @@
+#include "adc.h"
+//PA0 can be used as ADC12_IN5
+
+void adc_CC_init()
+{
+	//Enable clock for GPIOA port
+	__HAL_RCC_
+	//Configure PA0 as analog input pin
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+	GPIO_InitStruct.Pin = GPIO_PIN_0;
+
+
+	//Enable clock for ADC1
+
+	//Configure ADC module for Continuous Conversion mode
+}

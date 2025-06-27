@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;5_ADC_Continuos_conversion/Src/adc&apos; to &apos;adc.c&apos;" description="Rename resource &apos;adc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/adc" name="adc.c" stamp="1750740470614" updateReferences="true"/>
+</session>
