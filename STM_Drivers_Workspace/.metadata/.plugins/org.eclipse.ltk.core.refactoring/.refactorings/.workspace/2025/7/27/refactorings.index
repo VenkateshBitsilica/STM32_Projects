@@ -1,0 +1,5 @@
+1751469232427	Delete resource '1_GPIO_Drivers/Src/sample.c'
+1751553499769	Rename resource '1_GPIO_Drivers'
+1751553565322	Delete resource 'STM32_LL_Drivers/1_GPIO_Drivers.launch'
+1751553569236	Delete resource 'STM32_LL_Drivers/1.GPIO_Drivers.launch'
+1751553914518	Delete resource '2_SPI_Drivers'

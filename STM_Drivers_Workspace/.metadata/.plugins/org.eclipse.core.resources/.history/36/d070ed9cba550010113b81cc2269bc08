@@ -1,0 +1,12 @@
+
+#ifndef INC_SPI_DRIVER_H_
+#define INC_SPI_DRIVER_H_
+
+#include "gpio_driver.h"
+
+#define SPI1_PCLK_EN()		(RCC->APB2ENR |= RCC_APB2ENR_SPI1EN)
+#define SPI2_PCLK_EN()		(RCC->APB1ENR1 |= RCC_APB1ENR1_SPI2EN)
+#define SPI3_PCLK_EN()		(RCC->APB1ENR1 |= RCC_APB1ENR1_SPI3EN)
+
+
+#endif /* INC_SPI_DRIVER_H_ */

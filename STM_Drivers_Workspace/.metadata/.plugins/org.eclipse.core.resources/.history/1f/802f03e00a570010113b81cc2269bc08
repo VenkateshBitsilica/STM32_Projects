@@ -1,0 +1,13 @@
+/*
+ * i2c_driver.h
+ *
+ *  Created on: Jul 2, 2025
+ *      Author: Venkatesh J
+ */
+
+#ifndef INC_I2C_DRIVER_H_
+#define INC_I2C_DRIVER_H_
+
+
+
+#endif /* INC_I2C_DRIVER_H_ */

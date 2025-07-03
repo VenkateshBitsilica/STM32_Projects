@@ -1,0 +1,75 @@
+
+#include "spi_driver.h"
+
+
+/*
+ * Peripheral Clock Setup
+ */
+void SPI_PclkControl(SPI_TypeDef *pSPIx, uint8_t EnorDi)
+{
+	if(EnorDi == ENABLE)
+	{
+		if(pSPIx == SPI1)
+			SPI1_PCLK_EN();
+		else if(pSPIx == SPI2)
+			SPI2_PCLK_EN();
+		else if(pSPIx == SPI3)
+			SPI3_PCLK_EN();
+	}
+	else
+	{
+		if(pSPIx == SPI1)
+			SPI1_PCLK_DI();
+		else if(pSPIx == SPI2)
+			SPI2_PCLK_DI();
+		else if(pSPIx == SPI3)
+			SPI3_PCLK_DI();
+	}
+}
+
+/*
+ * GPIO Init & Deinit
+ */
+void SPI_Init(SPI_Handle_t *pSPIHandle)
+{
+
+}
+
+void SPI_Deinit(SPI_TypeDef *pSPIx)
+{
+	if(pSPIx == SPI1)
+		SPI1_REG_RST();
+	else if(pSPIx == SPI2)
+		SPI2_REG_RST();
+	else if(pSPIx == SPI3)
+		SPI3_REG_RST();
+}
+
+/*
+ * Data Send and Receive
+ */
+void SPI_SendData(SPI_TypeDef *pSPIx, uint8_t *pTxBuffer, uint32_t len)
+{
+
+}
+void SPI_ReceiveData(SPI_TypeDef *pSPIx, uint8_t *pRxBuffer, uint32_t len)
+{
+
+}
+
+/*
+ * IRQ Configuration and ISR handling
+ */
+//void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
+void SPI_IRQInterruptConfig(uint32_t IRQNumber, uint8_t EnorDi)
+{
+
+}
+void SPI_IRQPriorityConfig(uint32_t IRQNumber, uint32_t IRQPriority)
+{
+
+}
+void SPI_IRQHandler(SPI_Handle_t *pSPIHandle)
+{
+
+}

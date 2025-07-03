@@ -1,0 +1,102 @@
+
+#include "uart_driver.h"
+#include <string.h>
+
+/*
+ * PA2	-->		UART_TX
+ * PA3  -->		UART_RX
+ * Baud Rate --> 9600
+ */
+
+USART_Handle_t uartHandle;
+USART_Handle_t *pUARTHandle = &uartHandle;
+
+
+void delay(uint32_t n)
+{
+	uint32_t i,j;
+	for(i=0; i<n;i++)
+		for(j=0;j<1000;j++);
+}
+
+void UART_GPIOInits(void)
+{
+
+	GPIO_PclkControl(GPIOB, ENABLE);
+
+	GPIO_Handle_t UARTPins;
+
+	UARTPins.pGPIOx = GPIOB;
+	UARTPins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_AFN;
+	UARTPins.GPIO_PinConfig.GPIO_PinAltFunMode = 4;
+	UARTPins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	UARTPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+	UARTPins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+
+	//UART_Tx
+	UARTPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_2;
+	GPIO_Init(&UARTPins);
+
+	//UART_Rx
+	UARTPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_3;
+	GPIO_Init(&UARTPins);
+}
+
+void uart_init(void)
+{
+	pUARTHandle->pUSARTx = USART1;
+	pUARTHandle->USART_Config.USART_Mode = USART_MODE_ONLY_TX;
+	pUARTHandle->USART_Config.USART_WordLength = USART_WORDLEN_8BITS;
+	pUARTHandle->USART_Config.USART_Baud = 9600;
+	pUARTHandle->USART_Config.USART_HWFlowControl = USART_HW_FLOW_CTRL_NONE;
+	pUARTHandle->USART_Config.USART_NoOfStopBits =  USART_STOPBITS_1;
+	pUARTHandle->USART_Config.USART_ParityControl = USART_PARITY_DISABLE;
+
+	USART_Init(pUARTHandle);
+
+}
+
+void btn_init(void)
+{
+	GPIO_Handle_t pGPIOBtn;
+
+	GPIO_PclkControl(GPIOC, ENABLE);
+
+
+	pGPIOBtn.pGPIOx = GPIOC;
+	pGPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
+	pGPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+	pGPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+	pGPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+
+	GPIO_Init(&pGPIOBtn);
+}
+
+uint8_t buffer[] = "UART Transmitting";
+uint8_t len;
+
+int main(void)
+{
+
+	UART_GPIOInits();
+    uart_init();
+    btn_init();
+
+     len = strlen((char*)buffer);
+
+    while(1)
+    {
+    	//Waits until button is pressed
+    	//while(GPIO_ReadInputPin(GPIOC, GPIO_PIN_NO_13) == SET);
+
+    	delay(1000);
+
+    	USART_SendData(pUARTHandle, buffer, len);
+    }
+
+}
+
+
+
+
+

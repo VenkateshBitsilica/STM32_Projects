@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="UART"/>
+		<item value="I2C_typ"/>
+		<item value="status"/>
+		<item value="flags"/>
+		<item value="I2C "/>
+		<item value="I2C"/>
+		<item value="EXTI_TypeDef"/>
+		<item value="SPI_Ty"/>
+		<item value="SPI_Ty\"/>
+		<item value="RCC_TypeDef"/>
+		<item value="APB1ENR"/>
+		<item value="SPI2"/>
+		<item value="SPI1"/>
+	</list>
+</section>

@@ -1,0 +1,15 @@
+../Inc/core_cm4.h:1809:22:__NVIC_SetPriority	16	static
+../drivers/Src/uart_driver.c:7:6:USART_PeriClockControl	16	static
+../drivers/Src/uart_driver.c:40:6:USART_Init	24	static
+../drivers/Src/uart_driver.c:133:6:USART_DeInit	16	static
+../drivers/Src/uart_driver.c:150:6:USART_SendData	24	static
+../drivers/Src/uart_driver.c:166:6:USART_ReceiveData	24	static
+../drivers/Src/uart_driver.c:182:6:USART_SendReceive	24	static
+../drivers/Src/uart_driver.c:208:9:USART_SendDataIT	24	static
+../drivers/Src/uart_driver.c:224:9:USART_ReceiveDataIT	24	static
+../drivers/Src/uart_driver.c:244:6:USART_IRQConfig	16	static
+../drivers/Src/uart_driver.c:263:6:USART_IRQHandling	24	static
+../drivers/Src/uart_driver.c:318:9:USART_GetFlagStatus	16	static
+../drivers/Src/uart_driver.c:324:6:USART_ClearFlag	16	static
+../drivers/Src/uart_driver.c:328:6:USART_PeripheralControl	16	static
+../drivers/Src/uart_driver.c:335:6:USART_SetBaudRate	24	static

@@ -1,0 +1,7 @@
+1751381655629	Rename resource 'spi_Tx_IT'
+1751436569990	Rename resource 'spi_tx.c'
+1751436590376	Rename resource 'spi_Tx_IT.c'
+1751436600293	Rename resource 'spi_tx_arduino.c'
+1751517425333	Rename resource '6_i2c_master_tx.c'
+1751517434583	Rename resource '7.i2c_Master_Rx'
+1751552173250	Rename resource '9.UART_IT_Mode'
