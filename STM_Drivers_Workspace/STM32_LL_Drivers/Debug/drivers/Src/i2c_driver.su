@@ -7,6 +7,8 @@
 ../drivers/Src/i2c_driver.c:78:9:I2C_GetFlagStatus	16	static
 ../drivers/Src/i2c_driver.c:90:6:I2C_MasterSendData	24	static
 ../drivers/Src/i2c_driver.c:130:6:I2C_MasterReceiveData	24	static
-../drivers/Src/i2c_driver.c:164:6:I2C_IRQConfig	16	static
-../drivers/Src/i2c_driver.c:184:6:I2C_IRQHandling	16	static
-../drivers/Src/i2c_driver.c:192:6:I2C_PeripheralControl	16	static
+../drivers/Src/i2c_driver.c:160:9:I2C_MasterSendData_IT	24	static
+../drivers/Src/i2c_driver.c:183:9:I2C_MasterReceiveData_IT	24	static
+../drivers/Src/i2c_driver.c:211:6:I2C_IRQConfig	16	static
+../drivers/Src/i2c_driver.c:231:6:I2C_IRQHandling	24	static
+../drivers/Src/i2c_driver.c:288:6:I2C_PeripheralControl	16	static

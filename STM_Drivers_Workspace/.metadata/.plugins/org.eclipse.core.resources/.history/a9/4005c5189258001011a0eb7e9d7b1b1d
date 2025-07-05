@@ -186,10 +186,10 @@ void USART_SendReceive(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t
 		// Wait until TXE is set
 		while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_TXE)));
 
-		// Load data into TDR
+		// Load data into TDR (transmit)
 		pUSARTHandle->pUSARTx->TDR = *pTxBuffer;
 
-		// Wait until RXNE is set
+		// Wait until RXNE is set (data received back)
 		while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_RXNE)));
 
 		// Read received data from RDR
@@ -200,6 +200,7 @@ void USART_SendReceive(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t
 		len--;
 	}
 
+	// Optionally wait for entire transmission to complete
 	while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_TC)));
 }
 
@@ -335,16 +336,13 @@ void USART_SetBaudRate(USART_TypeDef *pUSARTx, uint32_t BaudRate)
 {
 	uint32_t PCLK, usartdiv;
 
-
+	// Assume OVER8 = 0 (oversampling by 16)
 	if(pUSARTx == USART1)
 		PCLK = RCC->CFGR & RCC_CFGR_PPRE2 ? 8000000 : 16000000;
 	else
 		PCLK = RCC->CFGR & RCC_CFGR_PPRE1 ? 8000000 : 16000000;
-	if(pUSARTx->CR1 & USART_CR1_OVER8 == 0)
-		usartdiv = (PCLK + (BaudRate/2U)) / BaudRate;	//Oversampling by 16
-	else
-		usartdiv = ((PCLK * 2U) + BaudRate) / (2U * BaudRate);	//Oversampling by 8
 
+	usartdiv = (PCLK + (BaudRate/2U)) / BaudRate;
 	pUSARTx->BRR = usartdiv;
 }
 

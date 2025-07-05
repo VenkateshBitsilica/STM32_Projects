@@ -186,10 +186,10 @@ void USART_SendReceive(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t
 		// Wait until TXE is set
 		while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_TXE)));
 
-		// Load data into TDR
+		// Load data into TDR (transmit)
 		pUSARTHandle->pUSARTx->TDR = *pTxBuffer;
 
-		// Wait until RXNE is set
+		// Wait until RXNE is set (data received back)
 		while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_RXNE)));
 
 		// Read received data from RDR
@@ -200,6 +200,7 @@ void USART_SendReceive(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t
 		len--;
 	}
 
+	// Optionally wait for entire transmission to complete
 	while (!(USART_GetFlagStatus(pUSARTHandle->pUSARTx, USART_FLAG_TC)));
 }
 

@@ -160,7 +160,7 @@ void I2C_MasterReceiveData(I2C_TypeDef *pI2Cx, uint8_t *pRxBuffer, uint32_t len,
 uint8_t I2C_MasterSendData_IT(I2C_Handle_t *pI2CHandle,uint8_t *pTxBuffer, uint32_t Len, uint8_t SlaveAddr)
 {
 	if(pI2CHandle->TxRxState != I2C_READY)
-		return I2C_BUSY;
+		return BUSY;
 
 	pI2CHandle->pTxBuffer = pTxBuffer;
 	pI2CHandle->TxLen = Len;
@@ -183,7 +183,7 @@ uint8_t I2C_MasterSendData_IT(I2C_Handle_t *pI2CHandle,uint8_t *pTxBuffer, uint3
 uint8_t I2C_MasterReceiveData_IT(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint32_t Len, uint8_t SlaveAddr)
 {
 	if(pI2CHandle->TxRxState != I2C_READY)
-		return I2C_BUSY;
+		return BUSY;
 
 	pI2CHandle->pRxBuffer = pRxBuffer;
 	pI2CHandle->RxLen = Len;
